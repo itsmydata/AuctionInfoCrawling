@@ -1,0 +1,8 @@
+현재 인증서 조회
+keytool -list -trustcacerts -keystore "%JAVA_HOME%\lib\security\cacerts" -storepass changeit
+
+사이트에서 인증서를 다운받아(제일 하위단 클릭) keytool에 추가
+keytool -trustcacerts -keystore "%JAVA_HOME%\lib\security\cacerts" -importcert -alias jincheon -file "C:\certificate\_.jincheon.go.kr.crt" -storepass changeit
+
+이미 있는 경우 delete
+keytool -delete -alias gangwon -keystore "%JAVA_HOME%\lib\security\cacerts" -storepass changeit
